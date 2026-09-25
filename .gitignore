@@ -1,0 +1,16 @@
+# Raw data and generated outputs (too large for GitHub)
+*.mcap
+*.mp4
+*.zip
+cvat_output/
+cvat_batch_*/
+supervisely_output/
+
+# Screenshots
+*.png
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

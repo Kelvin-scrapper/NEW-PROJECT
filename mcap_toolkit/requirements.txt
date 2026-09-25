@@ -1,0 +1,10 @@
+# Tested with Python 3.13 on Windows 11. Versions are the ones this toolkit was
+# validated against; newer point releases are generally fine.
+mcap==1.4.0
+mcap-ros2-support>=0.5.0
+av==18.1.0            # bundles FFmpeg (libx264 / HEVC decode) - no system ffmpeg needed
+numpy==2.2.6
+pillow==11.3.0
+scipy>=1.11           # quaternion math for the 3D lidar fusion
+
+# install:  py -m pip install -r requirements.txt
