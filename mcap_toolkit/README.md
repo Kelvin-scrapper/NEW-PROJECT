@@ -1,5 +1,7 @@
 # mcap_toolkit — rosbag2 `.mcap` → CVAT
 
+> **How the data and the conversion logic work:** see [logic.md](logic.md).
+
 Scripts to turn a rosbag2 **MCAP** recording into data you can upload to
 [CVAT](https://www.cvat.ai/):
 
@@ -9,6 +11,8 @@ Scripts to turn a rosbag2 **MCAP** recording into data you can upload to
 | `mcap_to_cvat_video.py` | H.264 **MP4** from the camera streams | CVAT 2D (video) |
 | `mcap_to_cvat_3d.py` | **ZIP** of fused `.pcd` frames + contextual camera images | CVAT 3D (point cloud) |
 | `mcap_to_supervisely_pce.py` | **ZIP** Point Cloud Episodes project (+ photo context, + `--start/--count` slice) | Supervisely 3D |
+| `supervisely_batch.py` | build full calibrated Supervisely zips for a whole folder of bags into `supervisely_batch_<date>/<bag>/<bag>_pce.zip`, skipping byte-identical copies, verifying each | Supervisely (batch) |
+| `verify_supervisely_zip.py` | check Supervisely zips before upload: integrity, naming, frame counts, calibration on every image | Supervisely |
 | `compress_video_for_size.py` | shrink any MP4 under a hard size cap (default 24 MB) by frame-decimating + resizing + auto-picking the best CRF | Supervisely video (25 MB) |
 
 No ROS installation is required — everything runs from `pip` packages, and
